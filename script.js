@@ -23,6 +23,8 @@ const DB = {
     }
   };
   
+
+  // Реалізувати функцію `useCollection` щоб вона повертала функцію `getPostItem`із відповідною логікою
   // const useCollection = coll => {
   //   // ...
   // };
