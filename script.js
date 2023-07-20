@@ -1,31 +1,31 @@
-// const DB = {
-//     collections: {
-//       posts: {
-//         posts_1: {
-//           name: 'Post 1',
-//           text: 'Some text 1'
-//         },
-//         posts_2: {
-//           name: 'Post 2',
-//           text: 'Some text 2'
-//         }
-//       },
-//       comments: {
-//         comments_1: {
-//           postId: 'post_1',
-//           text: 'Comment 1'
-//         },
-//         comments_2: {
-//           postId: 'post_1',
-//           text: 'Comment 2'
-//         }
-//       }
-//     }
-//   };
+const DB = {
+    collections: {
+      posts: {
+        posts_1: {
+          name: 'Post 1',
+          text: 'Some text 1'
+        },
+        posts_2: {
+          name: 'Post 2',
+          text: 'Some text 2'
+        }
+      },
+      comments: {
+        comments_1: {
+          postId: 'post_1',
+          text: 'Comment 1'
+        },
+        comments_2: {
+          postId: 'post_1',
+          text: 'Comment 2'
+        }
+      }
+    }
+  };
   
-//   const useCollection = coll => {
-//     // ...
-//   };
+  // const useCollection = coll => {
+  //   // ...
+  // };
 
 //   const getPostItem = useCollection('posts');
 
@@ -52,7 +52,7 @@ function useCollection(collectionName) {
     posts: [
       { id: 'posts_1', name: 'Post 1', text: 'Some text 1' },
       { id: 'posts_2', name: 'Post 2', text: 'Some text 2' },
-      // Інші записи...
+    
     ],
   };
 
