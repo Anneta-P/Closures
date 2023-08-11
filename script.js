@@ -88,7 +88,49 @@ const DB = {
 // }
 
 
-const collection = useCollection('posts');
+
+
+const useCollection = coll => {
+  if (!DB.collections.hasOwnProperty(coll)) {
+    DB.collections[coll] = {};
+  }
+
+  return {
+    get: id => {
+      const item = DB.collections[coll][id];
+      if (item) {
+        return { ...item, id };
+      } else {
+        return null;
+      }
+    },
+    create: (id, data) => {
+      DB.collections[coll][id] = data;
+    },
+    deleteOne: id => {
+      delete DB.collections[coll][id];
+    },
+    edit: (id, newData) => {
+      if (DB.collections[coll].hasOwnProperty(id)) {
+        DB.collections[coll][id] = { ...DB.collections[coll][id], ...newData };
+      } else {
+        throw new Error(`Item '${id}' does not exist in collection '${coll}'.`);
+      }
+    }
+  };
+};
+
+
+const postsCollection = useCollection('posts');
+
+const item1 = postsCollection.get('posts_1');
+console.log(item1);
+
+const notFoundItem = postsCollection.get('posts_3');
+console.log(notFoundItem);
+
+
+
 collection.get('some-id');
 collection.create(data);
 collection.deleteOne('some-id');
