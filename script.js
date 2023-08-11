@@ -24,7 +24,6 @@ const DB = {
   };
 
 
-
 // ЗАВДАННЯ 1
 // const useCollection = collectionName => {
 //   const fakeDatabase = {
@@ -89,7 +88,6 @@ const DB = {
 
 
 
-
 const useCollection = coll => {
   if (!DB.collections.hasOwnProperty(coll)) {
     DB.collections[coll] = {};
@@ -131,7 +129,7 @@ console.log(notFoundItem);
 
 
 
-collection.get('some-id');
-collection.create(data);
-collection.deleteOne('some-id');
-collection.edit('some-id', dataToEdit);
+// collection.get('some-id');
+// collection.create(data);
+// collection.deleteOne('some-id');
+// collection.edit('some-id', dataToEdit);
