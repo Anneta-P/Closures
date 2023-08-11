@@ -88,10 +88,6 @@ const DB = {
 // }
 
 
-
-
-// ЗАВДАННЯ 2
-
 const collection = useCollection('posts');
 collection.get('some-id');
 collection.create(data);
