@@ -15,3 +15,4 @@ console.log('first', whiteCounter());
 console.log('second', blackCounter());
 console.log('second', blackCounter());
 console.log('second', blackCounter());
+console.log('first', whiteCounter());
