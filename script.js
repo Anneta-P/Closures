@@ -16,3 +16,23 @@ console.log('second', blackCounter());
 console.log('second', blackCounter());
 console.log('second', blackCounter());
 console.log('first', whiteCounter());
+
+const subscribers = [
+  {name: 'A', isCloseFriend: true},
+  {name: 'B', isCloseFriend: false},
+  {name: 'C', isCloseFriend: true},
+  {name: 'D', isCloseFriend: false},
+  {name: 'E', isCloseFriend: false},
+  {name: 'F', isCloseFriend: false},
+  {name: 'G', isCloseFriend: true},
+  {name: 'J', isCloseFriend: true},
+  {name: 'K', isCloseFriend: true},
+  {name: 'I', isCloseFriend: true},
+
+  
+]
+
+for(let i = 10; i < subscribers.lenght; i++){
+  console.log(subscribers[i])
+}
+
