@@ -1,43 +1,3 @@
-/*
-const newCounter = () => {
-let value = 0;
-  const counter = () =>{
-    value ++;
-    return value;
-  }
-  return counter;
-} 
-
-const whiteCounter = newCounter();
-const blackCounter = newCounter();
-
-console.log('first', whiteCounter());
-console.log('second', blackCounter());
-console.log('second', blackCounter());
-console.log('second', blackCounter());
-console.log('first', whiteCounter());
-
-const subscribers = [
-  {name: 'A', isCloseFriend: true},
-  {name: 'B', isCloseFriend: false},
-  {name: 'C', isCloseFriend: true},
-  {name: 'D', isCloseFriend: false},
-  {name: 'E', isCloseFriend: false},
-  {name: 'F', isCloseFriend: false},
-  {name: 'G', isCloseFriend: true},
-  {name: 'J', isCloseFriend: true},
-  {name: 'K', isCloseFriend: true},
-  {name: 'I', isCloseFriend: true},
-
-  
-]
-
-for(let i = 10; i < subscribers.lenght; i++){
-  console.log(subscribers[i])
-}
-
-*/
-
 const DB = {
   collections: {
     posts: {
@@ -48,7 +8,11 @@ const DB = {
       posts_2: {
         name: 'Post 2',
         text: 'Some text 2'
-      }
+      },
+      abra: {
+        name: 'Post 3',
+        text: 'Some text 3'
+      },
     },
     comments: {
       comments_1: {
@@ -58,21 +22,43 @@ const DB = {
       comments_2: {
         postId: 'post_1',
         text: 'Comment 2'
-      }
+      },
+      abra: {
+        name: 'Comment 3',
+        text: 'Comment 3'
+      },
     }
   }
 };
 
-const useCollection = coll => {
 
-  const getPostItem = useCollection('collections');
-  const item = getPostItem('posts_1');
-console.log(item);
-  return function(){
-    console.log(posts);
-    console.log(posts_1);
+
+// const getCommentsById = (id) => {
+//   const collectionName = 'comments';
+//   const item = DB.collections[collectionName][id];
+//   return item;
+// };
+
+// const getPostsById = (id) => {
+//   const collectionName = 'posts';
+//   const item = DB.collections[collectionName][id];
+//   return item;
+// };
+
+const useCollection = (collectionName) => {
+  const getItemByCollectionAndId = (id) => {
+    const item = DB.collections[collectionName][id];
+    return item;
   }
-};
+  return getItemByCollectionAndId;
+}
 
-const post = useCollection();
-post();
+const getPostItemById = useCollection('posts');
+const getCommentItemById = useCollection('comments');
+
+// FINAL GOAL!!!
+const item1 = getPostItemById('abra');
+const item2 = getCommentItemById('abra');
+console.log('ITEM 1', item1);
+console.log('ITEM 2', item2);
+console.log('ARE EQUAL?', item1 === item2);
