@@ -8,11 +8,7 @@ const DB = {
       posts_2: {
         name: 'Post 2',
         text: 'Some text 2'
-      },
-      abra: {
-        name: 'Post 3',
-        text: 'Some text 3'
-      },
+      }
     },
     comments: {
       comments_1: {
@@ -22,32 +18,14 @@ const DB = {
       comments_2: {
         postId: 'post_1',
         text: 'Comment 2'
-      },
-      abra: {
-        name: 'Comment 3',
-        text: 'Comment 3'
-      },
+      }
     }
   }
 };
 
-
-
-// const getCommentsById = (id) => {
-//   const collectionName = 'comments';
-//   const item = DB.collections[collectionName][id];
-//   return item;
-// };
-
-// const getPostsById = (id) => {
-//   const collectionName = 'posts';
-//   const item = DB.collections[collectionName][id];
-//   return item;
-// };
-
-const useCollection = (collectionName) => {
+const useCollection = (coll) => {
   const getItemByCollectionAndId = (id) => {
-    const item = DB.collections[collectionName][id];
+    const item = DB.collections[coll][id];
     return item;
   }
   return getItemByCollectionAndId;
@@ -56,9 +34,11 @@ const useCollection = (collectionName) => {
 const getPostItemById = useCollection('posts');
 const getCommentItemById = useCollection('comments');
 
-// FINAL GOAL!!!
-const item1 = getPostItemById('abra');
-const item2 = getCommentItemById('abra');
-console.log('ITEM 1', item1);
-console.log('ITEM 2', item2);
-console.log('ARE EQUAL?', item1 === item2);
+
+const item1 = getPostItemById('posts_1');
+const item2 = getCommentItemById('posts_1');
+console.log(item1);
+
+
+
+
