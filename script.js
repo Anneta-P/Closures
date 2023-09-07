@@ -31,13 +31,26 @@ const useCollection = (coll) => {
   return getItemByCollectionAndId;
 }
 
+function getItemByCollectionAndId(){
+  let element;
+  element = document.getElementById("posts_4");
+  return element;
+};
+
+const notFoundItem = getItemByCollectionAndId('posts_4');
+
+
 const getPostItemById = useCollection('posts');
 const getCommentItemById = useCollection('comments');
 
 
 const item1 = getPostItemById('posts_1');
 const item2 = getCommentItemById('posts_1');
+
 console.log(item1);
+console.log(notFoundItem);
+
+
 
 
 
