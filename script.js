@@ -26,29 +26,23 @@ const DB = {
 const useCollection = (coll) => {
   const getItemByCollectionAndId = (id) => {
     const item = DB.collections[coll][id];
-    return item;
+    return item || null;
   }
   return getItemByCollectionAndId;
 }
 
-function getPostItem(){
-  let element;
-  element = document.getElementById("posts_4");
-  return element;
-};
-
-const notFoundItem = getPostItem('posts_4');
-
-
 const getPostItemById = useCollection('posts');
-const getCommentItemById = useCollection('comments');
-
 
 const item1 = getPostItemById('posts_1');
-const item2 = getCommentItemById('posts_1');
-
 console.log(item1);
+
+const notFoundItem = getPostItemById('posts_4');
 console.log(notFoundItem);
+
+
+
+
+
 
 
 
