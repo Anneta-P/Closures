@@ -27,14 +27,24 @@ const useCollection = (coll) => {
   const getItemByCollectionAndId = (id) => {
     const item = DB.collections[coll][id];
     return item || null;
+
   }
   return getItemByCollectionAndId;
 }
 
+function addIdToObject(obj, id) {
+  obj.id = id;
+  return obj;
+}
+
+const getPostItemWithId  = addIdToObject(DB.collections.posts.posts_1, 'posts_1');
+console.log(getPostItemWithId);
+
 const getPostItemById = useCollection('posts');
 
-const item1 = getPostItemById('posts_1');
-console.log(item1);
+
+// const item1 = getPostItemById('posts_1');
+// console.log(item1);
 
 const notFoundItem = getPostItemById('posts_4');
 console.log(notFoundItem);
